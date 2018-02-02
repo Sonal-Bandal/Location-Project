@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sZ7-1t-Kna">
+                                <rect key="frame" x="70" y="120" width="468" height="370"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="LxJ-mL-jrm">
+                                <rect key="frame" x="230" y="73" width="206" height="29"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <segments>
+                                    <segment title="standard"/>
+                                    <segment title="satelite"/>
+                                    <segment title="hybrid"/>
+                                </segments>
+                                <color key="tintColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changemap:" destination="BYZ-38-t0r" eventType="valueChanged" id="YhE-m9-8la"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pS9-yC-JVA">
+                                <rect key="frame" x="284" y="43" width="99" height="30"/>
+                                <state key="normal" title="detectlocation"/>
+                                <connections>
+                                    <action selector="btnaction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4v6-8o-nFw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sZ7-1t-Kna" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="3G0-RG-hrS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sZ7-1t-Kna" secondAttribute="bottom" constant="110" id="AhG-ND-qcI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sZ7-1t-Kna" secondAttribute="trailing" constant="42" id="GBH-MR-gmL"/>
+                            <constraint firstItem="sZ7-1t-Kna" firstAttribute="top" secondItem="LxJ-mL-jrm" secondAttribute="bottom" constant="19" id="Zhm-jA-k5C"/>
+                            <constraint firstItem="LxJ-mL-jrm" firstAttribute="centerX" secondItem="pS9-yC-JVA" secondAttribute="centerX" id="bFu-Sd-CBs"/>
+                            <constraint firstItem="LxJ-mL-jrm" firstAttribute="top" secondItem="pS9-yC-JVA" secondAttribute="bottom" id="sr6-bD-PCM"/>
+                            <constraint firstItem="LxJ-mL-jrm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="230" id="xAC-ks-aBV"/>
+                            <constraint firstItem="sZ7-1t-Kna" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="yeF-Xq-72h"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="changemaptype" destination="LxJ-mL-jrm" id="u6i-lC-7yb"/>
+                        <outlet property="mapkit" destination="sZ7-1t-Kna" id="i9p-3U-Zib"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="245" y="312"/>
+        </scene>
+    </scenes>
+</document>
